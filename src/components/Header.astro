@@ -1,0 +1,57 @@
+---
+import Home from './Icons/Home.astro'
+import User from './Icons/User.astro'
+import Briefcase from './Icons/Briefcase.astro'
+import Code from './Icons/Code.astro'
+import Envelope from './Icons/Envelope.astro'
+---
+
+<header id="navBar" class="w-full flex justify-center p-4 fixed top-0 z-2 bg-[#17143A]/80 backdrop-blur-sm">
+    <nav class="flex items-center gap-6 p-3 border border-indigo-300 rounded-full z-10">
+        <a data-value-item="home" href="#home" class="px-4 py-2 inline-block" aria-label="inicio" title="Inicio">
+            <Home height="16" fill="#EEF2FF" />
+        </a>
+        <a data-value-item="about" href="#about" class="px-4 py-2 inline-block" aria-label="sobre mi" title="Sobre mí">
+            <User height="16" fill="#EEF2FF" />
+        </a>
+        <a data-value-item="experience" href="#experience" class="px-4 py-2 inline-block" aria-label="experiencia" title="Experiencia">
+            <Briefcase height="16" fill="#EEF2FF" />
+        </a>
+        <a data-value-item="project" href="#project" class="px-4 py-2 inline-block" aria-label="proyectos" title="Proyectos">
+            <Code height="16" fill="#EEF2FF" />
+        </a>
+        <a data-value-item="contact" href="#contact" class="px-4 py-2 inline-block" aria-label="contacto" title="Contacto">
+            <Envelope height="16" fill="#EEF2FF" />
+        </a>
+    </nav>
+    <div id="moving-box" class="border border-indigo-300 rounded-full bg-linear-0 from-indigo-950 to-indigo-800 absolute transition-all duration-200 ease-initial"></div>
+</header>
+
+<script>
+    const movingBox = document.querySelector('#moving-box') as HTMLElement;
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const { isIntersecting } = entry;
+            if (isIntersecting) {
+                const sectionValue = entry.target.getAttribute('id');
+                const navItem = document.querySelector(`[data-value-item=${sectionValue}]`) as HTMLElement;
+                const { x, y, width, height } = navItem?.getBoundingClientRect();
+                movingBox.style.top = `${y}px`;
+                movingBox.style.left = `${x}px`;
+                movingBox.style.width = `${width}px`;
+                movingBox.style.height = `${height}px`;
+            }
+        });
+    }, observerOptions);
+
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section: HTMLElement) => observer.observe(section));
+
+</script>

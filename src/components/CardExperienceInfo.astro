@@ -1,0 +1,19 @@
+---
+import Badge from "./Badge.astro"
+
+interface Props {
+    dateRange: string,
+    title: string,
+}
+
+const { dateRange, title } = Astro.props
+---
+
+<article class="flex flex-col gap-4 pl-6 pb-8 border-l-3 border-indigo-300 relative">
+    <div class="rounded-full bg-indigo-300 w-4 h-4 absolute top-3 left-0 ml-[-9px]"></div>
+    <Badge content={dateRange} className="self-start" />
+    <div class="flex flex-col gap-3 p-6 border border-indigo-300 rounded-3xl bg-indigo-950">
+        <h4 class="font-medium text-xl leading-normal text-indigo-50 capitalize">{title}</h4>
+        <slot />
+    </div>
+</article>

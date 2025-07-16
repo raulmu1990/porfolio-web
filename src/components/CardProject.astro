@@ -1,0 +1,67 @@
+---
+import IconHTML from './Icons/IconHTML.astro'
+import IconCSS from './Icons/IconCSS.astro'
+import IconJS from './Icons/IconJS.astro'
+import IconReact from './Icons/IconReact.astro'
+import IconPHP from './Icons/IconPHP.astro'
+import IconWordPress from './Icons/IconWordPress.astro'
+import IconFigma from './Icons/IconFigma.astro'
+import IconFramer from './Icons/IconFramer.astro'
+import ExternalLink from './Icons/ExternalLink.astro'
+
+import Badge from './Badge.astro'
+
+const { imgUrl, title, description, technologies, link } = Astro.props
+---
+
+<article class="p-4 flex flex-col bg-indigo-950 border border-indigo-300 rounded-3xl hover:[&>div>img]:opacity-50 hover:[&>div>a]:opacity-100">
+    <div class="flex flex-col relative justify-center">
+        <a href={link} target="_blank" rel="noopener noreferrer" class="flex gap-2 bg-linear-0 from-indigo-950 to-indigo-800 px-4 py-2 rounded-full border-2 border-indigo-300 text-indigo-50/60 hover:text-indigo-50 text-sm font-semibold leading-snug cursor-pointer transition-all ease-in duration-300 hover:to-indigo-600 hover:border-indigo-50 absolute top-2 right-2 z-1 opacity-100 lg:opacity-0">
+            <span class="hidden lg:inline">Ir al sitio</span>
+            <ExternalLink height="16" class="fill-indigo-50/60 hover:fill-indigo-50" />
+        </a>
+        <img loading="lazy" class="rounded-xl aspect-video object-cover object-center z-0" src={imgUrl} alt={title} />
+    </div>
+    <header class="p-4 flex flex-col gap-3">
+        <h3 class="text-2xl font-semibold text-indigo-50 leading-normal text-center">{title}</h3>
+        <p class="font-medium text-indigo-50/60 leading-normal text-center">{description}</p>
+    </header>
+    <footer class="flex flex-col gap-4 items-center">
+        <Badge content="Tecnologías" />
+        <div class="flex gap-4 justify-center flex-wrap">
+            {
+                technologies.map((item: string) => {
+                    switch(item) {
+
+                        case "HTML":
+                            return (<IconHTML height="24" class="fill-indigo-50/60 hover:fill-indigo-50" />);
+
+                        case "CSS":
+                            return (<IconCSS height="24" class="fill-indigo-50/60 hover:fill-indigo-50" />);
+
+                        case "JavaScript":
+                            return (<IconJS  height="24" class="fill-indigo-50/60 hover:fill-indigo-50" />);
+
+                        case "React":
+                            return (<IconReact height="24" class="fill-indigo-50/60 hover:fill-indigo-50" />);
+
+                        case "PHP":
+                            return (<IconPHP height="24" class="fill-indigo-50/60 hover:fill-indigo-50" />);
+
+                        case "WordPress":
+                            return (<IconWordPress  height="24" class="fill-indigo-50/60 hover:fill-indigo-50" />);
+
+                        case "Figma":
+                            return (<IconFigma height="24" class="fill-indigo-50/60 hover:fill-indigo-50" />)
+
+                        case "Framer":
+                            return (<IconFramer height="24" class="fill-indigo-50/60 hover:fill-indigo-50" />)
+
+                        default:
+                            return null;
+                    }
+                })
+            }
+        </div>
+    </footer>
+</article>

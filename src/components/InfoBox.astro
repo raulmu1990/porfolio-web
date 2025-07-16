@@ -1,0 +1,16 @@
+---
+interface Props {
+    title: string,
+    content: string,
+    className?: string,
+}
+
+const { title, content, className } = Astro.props
+---
+
+<article class={`p-5 border border-indigo-300 rounded-3xl bg-indigo-950 ${className}`}>
+    <p class="text-sm font-medium leading-normal text-indigo-50/60 flex flex-col gap-3">
+        {title}
+        <strong class="font-bold text-indigo-50">{content}</strong>
+    </p>
+</article>

@@ -1,0 +1,25 @@
+---
+interface Props {
+    title: string,
+    value: number,
+}
+
+const { title, value } = Astro.props
+---
+
+<div class="flex flex-col gap-3">
+    <label for="skill" class="font-medium text-lg leading-normal text-indigo-50">{title}</label>
+    <meter class="rounded-full w-full" id="skill" min="0" max="100" value={value}>{value}%</meter>
+</div>
+
+<style>
+    meter::-webkit-meter-bar {
+        background: transparent;
+        border: 1px solid #6366F1;
+        border-radius: 12px;
+    }
+
+    meter::-webkit-meter-optimum-value {
+        background: linear-gradient(90deg, #A5B4FC, #6366F1);
+    }
+</style>
