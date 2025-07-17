@@ -1,4 +1,7 @@
 ---
+import type { ImageMetadata } from 'astro'
+import { Image } from 'astro:assets'
+
 import IconHTML from './Icons/IconHTML.astro'
 import IconCSS from './Icons/IconCSS.astro'
 import IconJS from './Icons/IconJS.astro'
@@ -11,7 +14,17 @@ import ExternalLink from './Icons/ExternalLink.astro'
 
 import Badge from './Badge.astro'
 
+interface Props {
+    imgUrl: string,
+    title: string,
+    description: string,
+    technologies: string[],
+    link: string,
+}
+
 const { imgUrl, title, description, technologies, link } = Astro.props
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpg,jpeg,png,gif,webp}')
+if (!images[imgUrl]) throw new Error(`"${imgUrl}" does not exist in glob: "src/assets/*.{jpg,jpeg,png,gif,webp}"`);
 ---
 
 <article class="p-4 flex flex-col bg-indigo-950 border border-indigo-300 rounded-3xl hover:[&>div>img]:opacity-50 hover:[&>div>a]:opacity-100">
@@ -20,7 +33,7 @@ const { imgUrl, title, description, technologies, link } = Astro.props
             <span class="hidden lg:inline">Ir al sitio</span>
             <ExternalLink height="16" class="fill-indigo-50/60 hover:fill-indigo-50" />
         </a>
-        <img loading="lazy" class="rounded-xl aspect-video object-cover object-center z-0" src={imgUrl} alt={title} />
+        <Image class="rounded-xl aspect-video object-cover object-center z-0" src={images[imgUrl]()} alt={title} />
     </div>
     <header class="p-4 flex flex-col gap-3">
         <h3 class="text-2xl font-semibold text-indigo-50 leading-normal text-center">{title}</h3>

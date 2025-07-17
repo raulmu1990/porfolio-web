@@ -1,20 +1,20 @@
 [
     {
-        "imageURL": "src/assets/online-store-react.webp",
+        "imageURL": "/src/assets/online-store-react.webp",
         "title": "Tienda online de ropa",
         "description": "Proyecto de e-commerce de ropa con funcionalidad de carrito de compras y filtrado de productos.",
         "technologies": ["HTML", "CSS", "JavaScript", "React"],
         "link": "https://actividad-mi-tienda-online-react.vercel.app/"
     },
     {
-        "imageURL": "src/assets/clinica-medica.webp",
+        "imageURL": "/src/assets/clinica-medica.webp",
         "title": "Sitio web de clínica",
         "description": "Plantilla web elaborada con Framer para la reserva de citas medicas en clínicas y hospitales.",
         "technologies": ["Framer", "Figma"],
         "link": "https://hospitalia.framer.website/"
     },
     {
-        "imageURL": "src/assets/real-estate-landing.webp",
+        "imageURL": "/src/assets/real-estate-landing.webp",
         "title": "Real State landing",
         "description": "Sitio web para una agencia inmobiliaria que permite ver propiedades y agendar citas.",
         "technologies": ["Framer", "Figma"],
