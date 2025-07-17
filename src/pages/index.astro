@@ -34,7 +34,7 @@ import projects from '../data/projects.json'
 
 <Layout title="Porfolio de Raul Munguia. Desarrollador y programador web Front-end">
 	<main class="w-full max-w-full h-screen overflow-y-scroll snap-y snap-mandatory z-1">
-		<SectionContainer containerClass="flex flex-col justify-center items-center gap-8 sm:gap-12 py-16 lg:py-0 lg:flex-row lg:gap-16" sectionId="home">
+		<SectionContainer containerClass="flex flex-col justify-center items-center gap-8 sm:gap-12 py-[128px] lg:py-0 lg:flex-row lg:gap-16" sectionId="home">
 				<div class="w-[80%] sm:w-[60%] lg:w-[50%] xl:w-[40%] p-4 relative flex justify-center">
 					<Image loading="eager" class="w-full aspect-square rounded-full z-1 border-12 border-[#17143A]" src={fotoCurriculum} alt="Foto de porfolio de Raul Munguia" />
 					<BlobShape class="z-0"/>
@@ -58,7 +58,7 @@ import projects from '../data/projects.json'
 					</div>
 				</div>
 		</SectionContainer>
-		<SectionContainer containerClass="flex flex-col gap-12 lg:flex-row py-[128px]" sectionId="about">
+		<SectionContainer containerClass="flex flex-col gap-12 lg:flex-row py-[128px] lg:py-0" sectionId="about">
 			<div class="flex flex-col gap-6 w-full lg:w-[60%]">
 				<h2 class="text-5xl font-bold leading-snug bg-clip-text text-transparent bg-linear-90 from-indigo-300 to-indigo-500 capitalize">Sobre mí</h2>
 				<p class="text-xl font-medium leading-normal text-indigo-50/60 space">
@@ -134,7 +134,7 @@ import projects from '../data/projects.json'
 				</div>
 			</div>
 		</SectionContainer>
-		<SectionContainer containerClass="flex flex-col gap-12 py-[128px]" sectionId="project">
+		<SectionContainer containerClass="flex flex-col gap-12 py-[128px] lg:py-0" sectionId="project">
 			<div class="flex flex-col gap-6">
 				<h2 class="text-5xl font-bold leading-snug bg-linear-90 from-indigo-300 to-indigo-500 capitalize text-transparent bg-clip-text">Proyectos</h2>
 				<p class="font-medium text-2xl text-indigo-50/60 leading-normal w-full lg:w-[80%]">Estos son algunos de los proyectos que he desarrollado utilizando diversos frameworks, lenguajes y herramientas low-code.</p>
