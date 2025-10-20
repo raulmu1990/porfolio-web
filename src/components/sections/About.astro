@@ -1,0 +1,46 @@
+---
+import SectionContainer from "@components/SectionContainer.astro";
+
+// Icons
+import InfoBox from "@components/InfoBox.astro";
+import IconHTML from "@components/Icons/IconHTML.astro";
+import IconCSS from "@components/Icons/IconCSS.astro";
+import IconPHP from "@components/Icons/IconPHP.astro";
+import IconJS from "@components/Icons/IconJS.astro";
+import IconReact from "@components/Icons/IconReact.astro";
+import IconWordPress from "@components/Icons/IconWordPress.astro";
+---
+
+<SectionContainer sectionId="about">
+    <div class="w-full max-w-[1076px] flex flex-col gap-12 lg:flex-row py-[128px] lg:py-0">
+        <div class="flex flex-col gap-6 w-full lg:w-[60%]">
+            <h2 class="text-5xl font-bold leading-snug bg-clip-text text-transparent bg-linear-90 from-indigo-300 to-indigo-500 capitalize">Sobre mí</h2>
+            <p class="text-xl font-medium leading-normal text-indigo-50/60 space">
+                Llevo más de dos años ejerciendo como programador web principalmente en el área del Front-end, 
+                tanto de forma freelance como trabajando para otras empresas.</br></br> En un principio trabaje desarrollando sitios web 
+                con WordPress utilizando constructores web como Elementor. Luego utilizando mis conocimientos en HTML, CSS, 
+                JavaScript y PHP, empecé a trabajar en proyectos de desarrollo de temas a medida, ofreciendo funcionalidades 
+                especificas para clientes.</br></br> A dia de hoy, tengo experiencia trabajando con diversas herramientas como WordPress, 
+                Framer, Figma y Webflow, así como con tecnologías como React, Tailwind, Astro y Vite, entre otras.
+            </p>
+        </div>
+        <div class="flex flex-col gap-12 w-full lg:w-[40%]">
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+                <InfoBox title="Nombre completo:" content="Raúl Eduardo Munguía Urbina" className="xl:col-span-2" />
+                <InfoBox title="Email:" content="raulmu19@gmail.com" />
+                <InfoBox title="Telefono:" content="77796762" />
+            </div>
+            <footer class="flex flex-col gap-6">
+                <h3 class="text-2xl font-semibold text-indigo-50">Tecnologías</h3>
+                <div class="flex gap-6 flex-wrap">
+                    <IconHTML title="HTML" height="32" class="fill-indigo-50/60 hover:fill-indigo-50" />
+                    <IconCSS title="CSS" height="32" class="fill-indigo-50/60 hover:fill-indigo-50" />
+                    <IconJS title="JavaScript" height="32" class="fill-indigo-50/60 hover:fill-indigo-50" />
+                    <IconPHP title="PHP" height="32" class="fill-indigo-50/60 hover:fill-indigo-50" />
+                    <IconReact title="React" height="32" class="fill-indigo-50/60 hover:fill-indigo-50" />
+                    <IconWordPress title="WordPress" height="32" class="fill-indigo-50/60 hover:fill-indigo-50" />
+                </div>
+            </footer>
+		</div>
+    </div>
+</SectionContainer>

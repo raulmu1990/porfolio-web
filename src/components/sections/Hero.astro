@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import fotoCurriculum from "@assets/foto-curriculum.webp";
+
+import SectionContainer from "@components/SectionContainer.astro";
+import BlobShape from "@components/graphics/BlobShape.astro";
+import PrimaryButton from "@components/PrimaryButton.astro";
+import Github from "@components/Icons/Github.astro";
+import Linkedin from "@components/Icons/Linkedin.astro";
+---
+
+<SectionContainer sectionId="home">
+    <div class="w-full max-w-[1076px] flex flex-col justify-center items-center gap-8 sm:gap-12 py-[128px] lg:py-0 lg:flex-row lg:gap-16">
+        <div class="w-[80%] sm:w-[60%] lg:w-[50%] xl:w-[40%] p-4 relative flex justify-center">
+            <Image loading="eager" class="w-full aspect-square rounded-full z-1 border-12 border-[#17143A]" src={fotoCurriculum} alt="Foto de porfolio de Raul Munguia" />
+            <BlobShape class="z-0"/>
+        </div>
+        <div class="flex flex-col gap-4 xl:items-start w-full sm:w-[80%] xl:w-[60%]">
+            <h1 class="text-6xl text-center font-bold leading-snug lg:text-start">Desarrollador 
+                <span class="bg-linear-30 from-indigo-300 to-indigo-500 bg-clip-text text-transparent">Front-End</span>
+            </h1>
+            <p class="font-medium text-2xl text-center text-indigo-50/60 leading-normal lg:text-start">
+                Hey, mi nombre es Raúl Munguía. Soy ingeniero industrial y de sistemas especializado en diseño y desarrollo de soluciones web únicas.
+            </p>
+            <div class="flex justify-center gap-4 lg:justify-start">
+                <PrimaryButton href="https://github.com/raulmu1990" target="_blank" rel="noopener noreferrer">
+                    <Github height="20" fill="#EEF2FF" />
+                    Github
+                </PrimaryButton>
+                <PrimaryButton href="https://www.linkedin.com/in/raulmu19/" target="_blank" rel="noopener noreferrer">
+                    <Linkedin height="20" fill="#EEF2FF" />
+                    LinkedIn
+                </PrimaryButton>
+            </div>
+		</div>
+    </div>
+</SectionContainer>

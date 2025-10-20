@@ -1,0 +1,21 @@
+---
+import SectionContainer from "@components/SectionContainer.astro";
+import InputForm from "@components/InputForm.astro";
+---
+
+<SectionContainer sectionId="contact">
+    <div class="w-full max-w-[1076px] flex flex-col gap-8 lg:gap-12 lg:flex-row py-[128px]">
+        <div class="flex flex-col gap-6 justify-center w-full lg:w-[50%]">
+            <h2 class="text-5xl font-bold leading-snug bg-linear-90 from-indigo-300 to-indigo-500 capitalize text-transparent bg-clip-text">Contáctame</h2>
+            <p class="font-medium text-2xl text-indigo-50/60 leading-normal">¿Tienes algún proyecto en mente? estoy disponible para trabajar en cualquier momento.</p>
+        </div>
+        <form class="border border-indigo-300 rounded-3xl p-12 flex flex-col gap-8 w-full lg:w-[50%] bg-indigo-950" action="https://submit-form.com/sP7CkOwg3" method="post">
+            <InputForm label="Nombre" type="text" name="firstName" placeholder="Nombre" required />
+            <InputForm label="Email" type="email" name="email" placeholder="Email" required />
+            <textarea class="border border-indigo-50/60 rounded-2xl px-6 py-4 text-lg text-indigo-50 placeholder:text-indigo-50/60 h-[140px]" name="message" placeholder="Mensaje"></textarea>
+            <button type="submit" class="self-start border-3 border-indigo-300 px-6 py-3 rounded-full flex bg-linear-0 from-indigo-950 to-indigo-800 hover:border-indigo-50 hover:to-indigo-600 font-semibold leading-snug">
+                Enviar
+            </button>
+        </form>
+    </div>
+</SectionContainer>

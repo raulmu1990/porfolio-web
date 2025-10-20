@@ -1,0 +1,35 @@
+---
+import projects from "@data/projects.json";
+
+import SectionContainer from "@components/SectionContainer.astro";
+import CardProject from "@components/CardProject.astro";
+---
+
+<SectionContainer sectionId="project">
+    <div class="w-full max-w-[1076px] flex flex-col gap-12 py-[128px] lg:py-0">
+        <div class="flex flex-col gap-6">
+            <h2 class="text-5xl font-bold leading-snug bg-linear-90 from-indigo-300 to-indigo-500 capitalize text-transparent bg-clip-text">
+                Proyectos
+            </h2>
+            <p class="font-medium text-2xl text-indigo-50/60 leading-normal w-full lg:w-[80%]">
+                Estos son algunos de los proyectos que he desarrollado utilizando 
+                diversos frameworks, lenguajes y herramientas low-code.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+            {
+                projects.map(item => {
+                    return (
+                        <CardProject 
+                            imgUrl={item.imageURL} 
+                            title={item.title} 
+                            description={item.description} 
+                            technologies={item.technologies} 
+                            link={item.link} 
+                        />
+                    )
+                })
+            }
+        </div>
+    </div>
+</SectionContainer>

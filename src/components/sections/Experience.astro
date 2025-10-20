@@ -1,0 +1,59 @@
+---
+// JSON Data
+import experience from "@data/experience.json";
+import formation from "@data/formation.json";
+
+// Section
+import SectionContainer from "@components/SectionContainer.astro";
+
+import SkillMeter from "@components/SkillMeter.astro";
+import CardExperienceInfo from "@components/CardExperienceInfo.astro";
+---
+
+<SectionContainer sectionId="experience">
+    <div class="w-full max-w-[1076px] flex flex-col gap-16 py-[128px] lg:py-0 lg:gap-12 lg:flex-row">
+        <div class="w-full flex flex-col gap-12 self-start lg:w-[40%] lg:sticky lg:top-[144px]">
+            <h2 class="text-5xl font-bold leading-snug bg-linear-90 from-indigo-300 to-indigo-500 capitalize text-transparent bg-clip-text">Vida profesional</h2>
+            <div class="grid grid-cols-2 gap-8">
+                <SkillMeter title="Base de datos" value={80} />
+                <SkillMeter title="Microsoft Office" value={90} />
+                <SkillMeter title="Search console" value={75} />
+                <SkillMeter title="Control de versiones" value={80} />
+                <SkillMeter title="Diseño UI/UX" value={90} />
+                <SkillMeter title="Análisis de datos" value={90} />
+            </div>
+        </div>
+        <div class="w-full flex flex-col gap-16 lg:w-[60%]">
+            <div class="flex flex-col gap-8">
+                <h3 class="font-semibold text-2xl leading-normal text-indigo-50 capitalize">Experiencia profesional</h3>
+                <div class="flex flex-col gap-0">
+                    {
+                        experience.map(item => {
+                            return (
+                                <CardExperienceInfo dateRange={item.dateRange} title={item.title}>
+                                    <ul class="font-medium leading-normal text-indigo-50/60 pl-4">
+                                        {item.tasks.map(task => (<li class="list-disc">{task}</li>))}
+                                    </ul>
+                                </CardExperienceInfo>
+                            )
+                        })
+                    }
+                </div>
+            </div>
+            <div class="flex flex-col gap-8">
+                <h3 class="font-semibold text-2xl leading-normal text-indigo-50 capitalize">Formación</h3>
+                <div class="flex flex-col gap-0">
+                    {
+                        formation.map(item => {
+                            return (
+                                <CardExperienceInfo dateRange={item.dateRange} title={item.title}>
+                                    <p class="font-medium leading-normal text-indigo-50/60">{item.institution}</p>
+                                </CardExperienceInfo>
+                            )
+                        })
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</SectionContainer>
