@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import fotoCurriculum from "@assets/foto-curriculum.webp";
+import fotoLinkedin from "@assets/foto-linkedin.webp";
 
 import SectionContainer from "@components/SectionContainer.astro";
 import BlobShape from "@components/graphics/BlobShape.astro";
@@ -12,7 +12,7 @@ import Linkedin from "@components/Icons/Linkedin.astro";
 <SectionContainer sectionId="home">
     <div class="w-full max-w-[1076px] flex flex-col justify-center items-center gap-8 sm:gap-12 py-[128px] lg:py-0 lg:flex-row lg:gap-16">
         <div class="w-[80%] sm:w-[60%] lg:w-[50%] xl:w-[40%] p-4 relative flex justify-center">
-            <Image loading="eager" class="w-full aspect-square rounded-full z-1 border-12 border-[#17143A]" src={fotoCurriculum} alt="Foto de porfolio de Raul Munguia" />
+            <Image loading="eager" class="w-full aspect-square rounded-full z-1 border-12 border-[#17143A]" src={fotoLinkedin} alt="Foto de porfolio de Raul Munguia" />
             <BlobShape class="z-0"/>
         </div>
         <div class="flex flex-col gap-4 xl:items-start w-full sm:w-[80%] xl:w-[60%]">

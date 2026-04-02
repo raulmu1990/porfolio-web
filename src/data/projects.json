@@ -1,5 +1,12 @@
 [
     {
+        "imageURL": "/src/assets/betablog-strapi.webp",
+        "title": "Blog de tecnología",
+        "description": "Betablog es un blog de tecnologia hecho con Astro y Strapi como CMS para la fácil publicación de artículos y noticias.",
+        "technologies": ["HTML", "CSS", "JavaScript", "Astro", "Strapi"],
+        "link": "https://betablog.vercel.app/"
+    },
+    {
         "imageURL": "/src/assets/online-store-react.webp",
         "title": "Tienda online de ropa",
         "description": "Proyecto de e-commerce de ropa con funcionalidad de carrito de compras y filtrado de productos.",

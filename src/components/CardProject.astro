@@ -10,6 +10,8 @@ import IconPHP from './Icons/IconPHP.astro'
 import IconWordPress from './Icons/IconWordPress.astro'
 import IconFigma from './Icons/IconFigma.astro'
 import IconFramer from './Icons/IconFramer.astro'
+import IconAstro from './Icons/IconAstro.astro'
+import IconStrapi from './Icons/IconStrapi.astro'
 import ExternalLink from './Icons/ExternalLink.astro'
 
 import Badge from './Badge.astro'
@@ -69,6 +71,12 @@ if (!images[imgUrl]) throw new Error(`"${imgUrl}" does not exist in glob: "src/a
 
                         case "Framer":
                             return (<IconFramer height="24" class="fill-indigo-50/60 hover:fill-indigo-50" />)
+
+                        case "Astro":
+                            return (<IconAstro height="24" class="fill-indigo-50/60 hover:fill-indigo-50" />)
+
+                        case "Strapi":
+                            return (<IconStrapi height="24" class="fill-indigo-50/60 hover:fill-indigo-50" />)
 
                         default:
                             return null;
